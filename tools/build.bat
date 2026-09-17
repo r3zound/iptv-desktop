@@ -30,8 +30,11 @@ if not exist "%PY%" (
     exit /b 1
 )
 
-if not exist "assets\icons\10-globe.ico" (
-    echo !!! Cannot find assets\icons\10-globe.ico
+REM Absolute icon path: PyInstaller resolves --icon relative to --specpath,
+REM so a bare relative path becomes tools\assets\... which is wrong.
+set ICON_PATH=%~dp0..\assets\icons\10-globe.ico
+if not exist "%ICON_PATH%" (
+    echo !!! Cannot find %ICON_PATH%
     echo !!! Run: python tools\build_icons.py
     exit /b 1
 )
@@ -67,7 +70,7 @@ REM --onedir:  faster cold-start than --onefile.
 %PY% -m PyInstaller ^
     --onedir ^
     --name iptv-desktop ^
-    --icon "assets\icons\10-globe.ico" ^
+    --icon "%ICON_PATH%" ^
     --console ^
     --noconfirm ^
     --clean ^

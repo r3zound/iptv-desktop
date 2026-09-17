@@ -179,7 +179,7 @@ def load_source() -> Config:
     baked-in defaults. The tool must run on a fresh portable folder
     with nothing but the exe + source.ini.
     """
-    cfg = configparser.ConfigParser()
+    cfg = configparser.ConfigParser(inline_comment_prefixes=(";", "#"))
     cfg.read(_ini_path(), encoding="utf-8")
 
     sources: List[SourceConfig] = []
