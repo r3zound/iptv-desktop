@@ -1,0 +1,35 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+
+# ---- PyInstaller build artifacts ----
+*.spec
+tools/build/
+tools/dist/
+
+# ---- Build output (re-created by build.bat + make_portable.py) ----
+dist/
+
+# ---- Runtime cache (created on first launch) ----
+cache/
+seed_cache/
+
+# ---- Editor / OS junk ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ---- Local secrets (in case user drops a config override) ----
+.env
+.env.*
+!source.ini
+
+# ---- Tool cache (do NOT track tools/core/.cache/ if any) ----
+tools/core/.cache/
