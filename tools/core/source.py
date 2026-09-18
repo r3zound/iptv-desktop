@@ -218,6 +218,6 @@ def load_filter_config():
     """
     import configparser as _cp
     from . import filters as _filters  # local import to avoid cycle
-    cfg = _cp.ConfigParser()
+    cfg = _cp.ConfigParser(inline_comment_prefixes=(";", "#"))
     cfg.read(_ini_path(), encoding="utf-8")
     return _filters.parse_filter_config(cfg)
