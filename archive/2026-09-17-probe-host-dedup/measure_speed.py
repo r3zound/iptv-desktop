@@ -33,8 +33,8 @@ def _import_legacy_probe_full() -> object:
 
     Kept here so the comparison runs without needing git. The body is
     an honest copy of the old logic (per-URL submit, as_completed,
-    per-URL pass/fail classification). Diff vs git HEAD at commit
-    40ffba0 (rename: iptv-r3zound -> iptv-desktop) is the source of truth.
+    per-URL pass/fail classification) preserved for A/B benchmarking
+    against the host-aware two-phase probe.
     """
     import concurrent.futures
 

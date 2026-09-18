@@ -49,7 +49,7 @@ def _http_get(url: str, timeout: float) -> bytes:
     req = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "collect-iptv-desktop/1.0 (+https://github.com/r3zound)",
+            "User-Agent": "iptv-desktop/1.0",
             "Accept": "*/*",
         },
     )
